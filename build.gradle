@@ -25,14 +25,21 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
+    //implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.h2database:h2'
     annotationProcessor 'org.projectlombok:lombok'
+    // Dependências do MapStruct
+    implementation 'org.mapstruct:mapstruct:1.6.0.Beta1' // Versão de implementação
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.0.Beta1' // Versão do processador
+
+    // Configuração para Lombok e MapStruct trabalharem juntos (se você usa Lombok)
+    // Se você não usa Lombok, pode pular esta parte
+    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.security:spring-security-test'
+    //testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
